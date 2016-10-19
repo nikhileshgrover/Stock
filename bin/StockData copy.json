@@ -1,0 +1,67 @@
+[
+  {
+    "_id": "57d1ac6a07b77b8c6eaffa5b",
+    "Sector": "Infra",
+    "isActive": false,
+    "StockName": "blue",
+    "StockSymbol": "green",
+    "LowestPurchasePrice": "$2,319.12",
+    "HighestPurchasePrice": "$3,537.74",
+    "TargetPurchasePrice": "$1,841.53",
+    "LastTradedPrice": "$3,564.24",
+    "ChangePercentage": "$3,025.40",
+    "Change": "$3,399.01"
+  },
+  {
+    "_id": "57d1ac6a81527d62e73d25fb",
+    "Sector": "Banking",
+    "isActive": false,
+    "StockName": "brown",
+    "StockSymbol": "brown",
+    "LowestPurchasePrice": "$3,471.91",
+    "HighestPurchasePrice": "$2,121.11",
+    "TargetPurchasePrice": "$3,714.13",
+    "LastTradedPrice": "$3,547.73",
+    "ChangePercentage": "$1,581.30",
+    "Change": "$3,226.21"
+  },
+  {
+    "_id": "57d1ac6ade07553ba1e9e799",
+    "Sector": "Pharma",
+    "isActive": true,
+    "StockName": "brown",
+    "StockSymbol": "blue",
+    "LowestPurchasePrice": "$3,756.49",
+    "HighestPurchasePrice": "$3,117.53",
+    "TargetPurchasePrice": "$1,269.87",
+    "LastTradedPrice": "$3,590.30",
+    "ChangePercentage": "$1,818.31",
+    "Change": "$2,487.78"
+  },
+  {
+    "_id": "57d1ac6a21a4038b0f7e3d35",
+    "Sector": "Pharma",
+    "isActive": true,
+    "StockName": "brown",
+    "StockSymbol": "blue",
+    "LowestPurchasePrice": "$3,057.45",
+    "HighestPurchasePrice": "$3,438.13",
+    "TargetPurchasePrice": "$2,885.29",
+    "LastTradedPrice": "$1,924.42",
+    "ChangePercentage": "$3,232.30",
+    "Change": "$3,793.24"
+  },
+  {
+    "_id": "57d1ac6acd441d302fc50867",
+    "Sector": "IT",
+    "isActive": false,
+    "StockName": "brown",
+    "StockSymbol": "blue",
+    "LowestPurchasePrice": "$1,136.92",
+    "HighestPurchasePrice": "$1,034.20",
+    "TargetPurchasePrice": "$1,882.46",
+    "LastTradedPrice": "$3,671.76",
+    "ChangePercentage": "$2,908.47",
+    "Change": "$3,080.67"
+  }
+]

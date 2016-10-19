@@ -1,0 +1,108 @@
+{
+  "stocks": [
+    {
+      "key": "amazon",
+      "sector": "Retail",
+      "isActive": true,
+      "stockName": "Amazon",
+      "stockSymbol": "NASDAQ:AMZN",
+      "lowestPurchasePrice": 1000.1,
+      "highestPurchasePrice": 3537.74,
+      "targetPurchasePrice": 50.0,
+      "lastTradedPrice": 822.8,
+      "changePercentage": 1.21,
+      "change": 9.85
+    },
+    {
+      "key": "microsoft",
+      "sector": "Software",
+      "isActive": true,
+      "stockName": "Microsoft",
+      "stockSymbol": "NASDAQ:MSFT",
+      "lowestPurchasePrice": 2000.2,
+      "highestPurchasePrice": 3537.74,
+      "targetPurchasePrice": 1841.53,
+      "lastTradedPrice": 57.83,
+      "changePercentage": 1.06,
+      "change": 0.6
+    },
+    {
+      "key": "facebook",
+      "sector": "Software",
+      "isActive": true,
+      "stockName": "Facebook",
+      "stockSymbol": "NASDAQ:FB",
+      "lowestPurchasePrice": 2100.2,
+      "highestPurchasePrice": 3232.74,
+      "targetPurchasePrice": 1463.53,
+      "lastTradedPrice": 129.16,
+      "changePercentage": 1.27,
+      "change": 1.62
+    },
+    {
+      "key": "chipotle",
+      "sector": "Restaurant",
+      "isActive": true,
+      "stockName": "Chipotle",
+      "stockSymbol": "NASDAQ:CMG",
+      "lowestPurchasePrice": 2000.2,
+      "highestPurchasePrice": 3537.74,
+      "targetPurchasePrice": 1841.53,
+      "lastTradedPrice": 392.66,
+      "changePercentage": -0.43,
+      "change": -1.69
+    },
+    {
+      "key": "expedia",
+      "sector": "Retail",
+      "isActive": true,
+      "stockName": "Expedia",
+      "stockSymbol": "NASDAQ:EXPE",
+      "lowestPurchasePrice": 2000.2,
+      "highestPurchasePrice": 3537.74,
+      "targetPurchasePrice": 1841.53,
+      "lastTradedPrice": 123.02,
+      "changePercentage": 1.02,
+      "change": 1.24
+    },
+    {
+      "key": "microsot",
+      "sector": "Tech",
+      "isActive": true,
+      "stockName": "Microsoft",
+      "stockSymbol": "NASDAQ:MSFT",
+      "lowestPurchasePrice": 0.0,
+      "highestPurchasePrice": 0.0,
+      "targetPurchasePrice": 0.0,
+      "lastTradedPrice": 57.83,
+      "changePercentage": 1.06,
+      "change": 0.6
+    },
+    {
+      "key": "facebook",
+      "sector": "Tech Social",
+      "isActive": true,
+      "stockName": "Facebook",
+      "stockSymbol": "NASDAQ:FB",
+      "lowestPurchasePrice": 0.0,
+      "highestPurchasePrice": 0.0,
+      "targetPurchasePrice": 0.0,
+      "lastTradedPrice": 129.16,
+      "changePercentage": 1.27,
+      "change": 1.62
+    },
+    {
+      "key": "675530",
+      "sector": "Tech Consulting",
+      "isActive": true,
+      "stockName": "Infosys Ltd",
+      "stockSymbol": "NSE:INFY",
+      "lowestPurchasePrice": 0.0,
+      "highestPurchasePrice": 0.0,
+      "targetPurchasePrice": 0.0,
+      "lastTradedPrice": 1039.0,
+      "changePercentage": 1.62,
+      "change": 16.6
+    }
+  ]
+}

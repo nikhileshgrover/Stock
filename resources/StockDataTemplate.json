@@ -1,0 +1,13 @@
+{
+		"key": "amazon",
+		"sector": "Retail",
+		"isActive": false,
+		"stockName": "Amazon",
+	    "stockSymbol": "NASDAQ:AMZN",
+	    "lowestPurchasePrice": "2319.12",
+	    "highestPurchasePrice": "3537.74",
+	    "targetPurchasePrice": "1841.53",
+	    "lastTradedPrice": "3564.24",
+	    "changePercentage": "3025.40",
+	    "change": "3399.01"
+	}
