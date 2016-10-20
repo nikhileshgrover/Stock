@@ -284,6 +284,18 @@ public class FormBuilder extends Application {
 		return gridPane;
 	}
 	
+	private Matches cleanListOfMatches() {
+		Matches lom = new Matches();
+		List<Match> m = new ArrayList<Match>();
+		for(int i=0; i < listOfMatches.getMatches().size(); i++){
+			if(listOfMatches.getMatches().get(i).getExchange().length() > 0 && listOfMatches.getMatches().get(i).getTicker().length() > 0) {
+				m.add(listOfMatches.getMatches().get(i));
+			}
+		}
+		lom.setMatches(m);
+		return lom;
+	}
+	
 	private void addRowToGridPane(int v) {
 		HashMap<String, Object> formFields;
 		String key = stockData.getStocks().get(v).getKey();
@@ -318,32 +330,30 @@ public class FormBuilder extends Application {
 		ComboBox<String> cbStockSymbol = new ComboBox<String>();
 		cbStockSymbol.setEditable(true);
 		
-		/*
-		cbStockSymbol.valueProperty().addListener(new ChangeListener<String>() {
-	        @Override public void changed(ObservableValue ov, String t, String t1) {
-	          System.out.println(ov);
-	            System.out.println(t);
-	            System.out.println(t1);
-	        }    
-	    });
-		*/
-		
 		cbStockSymbol.setOnKeyReleased(new EventHandler<KeyEvent>()
 	    {
 	        @Override
 	        public void handle(KeyEvent ke)
 	        {
-	        	System.out.println(ke.getCode().isLetterKey() + " | " + ke.getCode().isDigitKey());
+//	        	System.out.println(ke.getCode().isLetterKey() + " | " + ke.getCode().isDigitKey());
 //	        	if(false){
 	        	if(ke.getCode().isLetterKey() || ke.getCode().isDigitKey() || ke.getCode().equals(KeyCode.BACK_SPACE) || ke.getCode().equals(KeyCode.DELETE)) {
-//	        		Matches listOfMatches;
 	        		listOfMatches = stockManager.getStockMatch(cbStockSymbol.getEditor().getText());
+	        		listOfMatches = cleanListOfMatches();
+	        		
 	        		cbStockSymbol.getItems().remove(0, cbStockSymbol.getItems().size());
 		        		
 	        		for(int i=0; i < listOfMatches.getMatches().size(); i++){
-	        			if(listOfMatches.getMatches().get(i).getExchange().length() > 0 && listOfMatches.getMatches().get(i).getTicker().length() > 0) {
-	        				cbStockSymbol.getItems().add(listOfMatches.getMatches().get(i).getExchange() + ":" + listOfMatches.getMatches().get(i).getTicker());
-	        			}
+//        				cbStockSymbol.getItems().add(
+//        						i
+//        						+ " | " + listOfMatches.getMatches().get(i).getId()
+//        						+ " | " + listOfMatches.getMatches().get(i).getExchange()
+//        						+ ":" + listOfMatches.getMatches().get(i).getTicker()
+//        						);
+	        			cbStockSymbol.getItems().add(
+        						listOfMatches.getMatches().get(i).getExchange()
+        						+ ":" + listOfMatches.getMatches().get(i).getTicker()
+        						);
 	        		}
 		        		
 	        		cbStockSymbol.show();
@@ -357,14 +367,14 @@ public class FormBuilder extends Application {
 	                tfKey.setText(listOfMatches.getMatches().get(cbStockSymbol.getSelectionModel().getSelectedIndex()).getId());
 	                tfStockName.setText(listOfMatches.getMatches().get(cbStockSymbol.getSelectionModel().getSelectedIndex()).getName());
 //	                System.out.println(
-//	                		listOfMatches.getMatches().get(cbStockSymbol.getSelectionModel().getSelectedIndex()).getName() + " | "
+//	                		cbStockSymbol.getSelectionModel().getSelectedIndex()
+//	                		+ " | " + listOfMatches.getMatches().get(cbStockSymbol.getSelectionModel().getSelectedIndex()).getName() + " | "
 //	                		+ listOfMatches.getMatches().get(cbStockSymbol.getSelectionModel().getSelectedIndex()).getExchange() + " | "
 //	                		+ listOfMatches.getMatches().get(cbStockSymbol.getSelectionModel().getSelectedIndex()).getTicker() + " | "
 //	                		+listOfMatches.getMatches().get(cbStockSymbol.getSelectionModel().getSelectedIndex()).getId()
 //	                		);
 	            }    
 	        });
-	    
 		
 		Label lbStockSector = new Label("Sector");
 		TextField tfStockSector = new TextField();
@@ -391,7 +401,6 @@ public class FormBuilder extends Application {
 		ButtonType btypeCancel = new ButtonType("Cancel", ButtonData.CANCEL_CLOSE);
 		ButtonType btypeClear = new ButtonType("Clear", ButtonData.BACK_PREVIOUS);
 		
-
 		newStockDialog.getDialogPane().getButtonTypes().add(buttonTypeAdd);
 		newStockDialog.getDialogPane().getButtonTypes().add(btypeCancel);
 		newStockDialog.getDialogPane().getButtonTypes().add(btypeClear);
