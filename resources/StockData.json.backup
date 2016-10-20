@@ -129,6 +129,19 @@
       "lastTradedPrice": 28.8,
       "changePercentage": 0.1,
       "change": 0.03
+    },
+    {
+      "key": "663089",
+      "sector": "Tech",
+      "isActive": true,
+      "stockName": "Infosys Ltd ADR",
+      "stockSymbol": "NYSE:INFY",
+      "lowestPurchasePrice": 0.0,
+      "highestPurchasePrice": 0.0,
+      "targetPurchasePrice": 0.0,
+      "lastTradedPrice": 0.0,
+      "changePercentage": 0.0,
+      "change": 0.0
     }
   ]
 }

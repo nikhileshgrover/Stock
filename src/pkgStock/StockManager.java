@@ -84,6 +84,7 @@ public class StockManager {
 			String key = stockData.getStocks().get(i).getKey();
 			String stockSymbol = stockData.getStocks().get(i).getStockSymbol();
 			
+			
 			List googleStockData = getGoogleStockAPIResponse(stockSymbol);
 			
 			
