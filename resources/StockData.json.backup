@@ -9,9 +9,9 @@
       "lowestPurchasePrice": 1000.1,
       "highestPurchasePrice": 3537.74,
       "targetPurchasePrice": 50.0,
-      "lastTradedPrice": 822.8,
-      "changePercentage": 1.21,
-      "change": 9.85
+      "lastTradedPrice": 817.69,
+      "changePercentage": 0.0,
+      "change": 0.04
     },
     {
       "key": "microsoft",
@@ -22,9 +22,9 @@
       "lowestPurchasePrice": 2000.2,
       "highestPurchasePrice": 3537.74,
       "targetPurchasePrice": 1841.53,
-      "lastTradedPrice": 57.83,
-      "changePercentage": 1.06,
-      "change": 0.6
+      "lastTradedPrice": 57.53,
+      "changePercentage": -0.23,
+      "change": -0.13
     },
     {
       "key": "facebook",
@@ -35,9 +35,9 @@
       "lowestPurchasePrice": 2100.2,
       "highestPurchasePrice": 3232.74,
       "targetPurchasePrice": 1463.53,
-      "lastTradedPrice": 129.16,
-      "changePercentage": 1.27,
-      "change": 1.62
+      "lastTradedPrice": 130.11,
+      "changePercentage": 1.2,
+      "change": 1.54
     },
     {
       "key": "chipotle",
@@ -48,9 +48,9 @@
       "lowestPurchasePrice": 2000.2,
       "highestPurchasePrice": 3537.74,
       "targetPurchasePrice": 1841.53,
-      "lastTradedPrice": 392.66,
-      "changePercentage": -0.43,
-      "change": -1.69
+      "lastTradedPrice": 405.25,
+      "changePercentage": 2.87,
+      "change": 11.29
     },
     {
       "key": "expedia",
@@ -61,9 +61,9 @@
       "lowestPurchasePrice": 2000.2,
       "highestPurchasePrice": 3537.74,
       "targetPurchasePrice": 1841.53,
-      "lastTradedPrice": 123.02,
-      "changePercentage": 1.02,
-      "change": 1.24
+      "lastTradedPrice": 124.69,
+      "changePercentage": 1.51,
+      "change": 1.86
     },
     {
       "key": "microsot",
@@ -74,9 +74,9 @@
       "lowestPurchasePrice": 0.0,
       "highestPurchasePrice": 0.0,
       "targetPurchasePrice": 0.0,
-      "lastTradedPrice": 57.83,
-      "changePercentage": 1.06,
-      "change": 0.6
+      "lastTradedPrice": 57.53,
+      "changePercentage": -0.23,
+      "change": -0.13
     },
     {
       "key": "facebook",
@@ -87,9 +87,9 @@
       "lowestPurchasePrice": 0.0,
       "highestPurchasePrice": 0.0,
       "targetPurchasePrice": 0.0,
-      "lastTradedPrice": 129.16,
-      "changePercentage": 1.27,
-      "change": 1.62
+      "lastTradedPrice": 130.11,
+      "changePercentage": 1.2,
+      "change": 1.54
     },
     {
       "key": "675530",
@@ -100,9 +100,9 @@
       "lowestPurchasePrice": 0.0,
       "highestPurchasePrice": 0.0,
       "targetPurchasePrice": 0.0,
-      "lastTradedPrice": 1039.0,
-      "changePercentage": 1.62,
-      "change": 16.6
+      "lastTradedPrice": 1041.4,
+      "changePercentage": 0.23,
+      "change": 2.35
     },
     {
       "key": "784961",
@@ -113,9 +113,22 @@
       "lowestPurchasePrice": 0.0,
       "highestPurchasePrice": 0.0,
       "targetPurchasePrice": 0.0,
-      "lastTradedPrice": 0.0,
-      "changePercentage": 0.0,
-      "change": 0.0
+      "lastTradedPrice": 2390.0,
+      "changePercentage": -0.42,
+      "change": -10.2
+    },
+    {
+      "key": "757342559149718",
+      "sector": "Industry",
+      "isActive": true,
+      "stockName": "Sunoco LP",
+      "stockSymbol": "NYSE:SUN",
+      "lowestPurchasePrice": 0.0,
+      "highestPurchasePrice": 0.0,
+      "targetPurchasePrice": 0.0,
+      "lastTradedPrice": 28.8,
+      "changePercentage": 0.1,
+      "change": 0.03
     }
   ]
 }
