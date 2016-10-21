@@ -84,9 +84,7 @@ public class StockManager {
 			String key = stockData.getStocks().get(i).getKey();
 			String stockSymbol = stockData.getStocks().get(i).getStockSymbol();
 			
-			
 			List googleStockData = getGoogleStockAPIResponse(stockSymbol);
-			
 			
 			TextField tfLastTradedPrice = (TextField) listOfFormFields.get(i).get(key + "tfLastTradedPrice");
 			TextField tfChange = (TextField) listOfFormFields.get(i).get(key + "tfChange");

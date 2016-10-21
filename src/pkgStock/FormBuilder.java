@@ -164,7 +164,6 @@ public class FormBuilder extends Application {
 	    		stockManager.getStockMatch("Microsoft");
 	    		lbOutput.setText("Getting Match");
 	        }
-	    	
 	    });
 	    btnImage = new Image(getClass().getClassLoader().getResourceAsStream("images/MinusIcon.png"));
 	    imageView = new ImageView(btnImage);
@@ -355,7 +354,6 @@ public class FormBuilder extends Application {
         						+ ":" + listOfMatches.getMatches().get(i).getTicker()
         						);
 	        		}
-		        		
 	        		cbStockSymbol.show();
 	        	}
 	        }
