@@ -9,9 +9,9 @@
       "lowestPurchasePrice": 1000.1,
       "highestPurchasePrice": 3537.74,
       "targetPurchasePrice": 50.0,
-      "lastTradedPrice": 817.74,
-      "changePercentage": 0.01,
-      "change": 0.09
+      "lastTradedPrice": 742.38,
+      "changePercentage": -3.82,
+      "change": -29.5
     },
     {
       "key": "microsoft",
@@ -22,9 +22,9 @@
       "lowestPurchasePrice": 2000.2,
       "highestPurchasePrice": 3537.74,
       "targetPurchasePrice": 1841.53,
-      "lastTradedPrice": 57.51,
-      "changePercentage": -0.25,
-      "change": -0.15
+      "lastTradedPrice": 58.7,
+      "changePercentage": -2.44,
+      "change": -1.47
     },
     {
       "key": "facebook",
@@ -35,9 +35,9 @@
       "lowestPurchasePrice": 2100.2,
       "highestPurchasePrice": 3232.74,
       "targetPurchasePrice": 1463.53,
-      "lastTradedPrice": 130.0,
-      "changePercentage": 1.11,
-      "change": 1.43
+      "lastTradedPrice": 120.8,
+      "changePercentage": -1.93,
+      "change": -2.38
     },
     {
       "key": "chipotle",
@@ -48,9 +48,9 @@
       "lowestPurchasePrice": 2000.2,
       "highestPurchasePrice": 3537.74,
       "targetPurchasePrice": 1841.53,
-      "lastTradedPrice": 402.11,
-      "changePercentage": 2.05,
-      "change": 8.09
+      "lastTradedPrice": 391.83,
+      "changePercentage": 6.08,
+      "change": 22.46
     },
     {
       "key": "expedia",
@@ -61,9 +61,9 @@
       "lowestPurchasePrice": 2000.2,
       "highestPurchasePrice": 3537.74,
       "targetPurchasePrice": 1841.53,
-      "lastTradedPrice": 124.68,
-      "changePercentage": 1.51,
-      "change": 1.85
+      "lastTradedPrice": 123.63,
+      "changePercentage": -0.9,
+      "change": -1.12
     },
     {
       "key": "microsot",
@@ -74,9 +74,9 @@
       "lowestPurchasePrice": 0.0,
       "highestPurchasePrice": 0.0,
       "targetPurchasePrice": 0.0,
-      "lastTradedPrice": 57.51,
-      "changePercentage": -0.25,
-      "change": -0.15
+      "lastTradedPrice": 58.7,
+      "changePercentage": -2.44,
+      "change": -1.47
     },
     {
       "key": "facebook",
@@ -87,9 +87,9 @@
       "lowestPurchasePrice": 0.0,
       "highestPurchasePrice": 0.0,
       "targetPurchasePrice": 0.0,
-      "lastTradedPrice": 130.0,
-      "changePercentage": 1.11,
-      "change": 1.43
+      "lastTradedPrice": 120.8,
+      "changePercentage": -1.93,
+      "change": -2.38
     },
     {
       "key": "675530",
@@ -100,9 +100,9 @@
       "lowestPurchasePrice": 0.0,
       "highestPurchasePrice": 0.0,
       "targetPurchasePrice": 0.0,
-      "lastTradedPrice": 1041.4,
-      "changePercentage": 0.23,
-      "change": 2.35
+      "lastTradedPrice": 927.3,
+      "changePercentage": -1.29,
+      "change": -12.1
     },
     {
       "key": "784961",
@@ -113,9 +113,9 @@
       "lowestPurchasePrice": 0.0,
       "highestPurchasePrice": 0.0,
       "targetPurchasePrice": 0.0,
-      "lastTradedPrice": 2390.0,
-      "changePercentage": -0.42,
-      "change": -10.2
+      "lastTradedPrice": 2113.35,
+      "changePercentage": -1.95,
+      "change": -42.1
     },
     {
       "key": "757342559149718",
@@ -126,9 +126,74 @@
       "lowestPurchasePrice": 0.0,
       "highestPurchasePrice": 0.0,
       "targetPurchasePrice": 0.0,
-      "lastTradedPrice": 0.0,
-      "changePercentage": 0.0,
-      "change": 0.0
+      "lastTradedPrice": 24.98,
+      "changePercentage": -7.89,
+      "change": -2.14
+    },
+    {
+      "key": "3853944",
+      "sector": "Mining",
+      "isActive": true,
+      "stockName": "Glencore PLC",
+      "stockSymbol": "LON:GLEN",
+      "lowestPurchasePrice": 0.0,
+      "highestPurchasePrice": 0.0,
+      "targetPurchasePrice": 0.0,
+      "lastTradedPrice": 284.2,
+      "changePercentage": 5.16,
+      "change": 13.95
+    },
+    {
+      "key": "829919",
+      "sector": "Consumer Goods",
+      "isActive": true,
+      "stockName": "Dabur India Ltd",
+      "stockSymbol": "NSE:DABUR",
+      "lowestPurchasePrice": 0.0,
+      "highestPurchasePrice": 0.0,
+      "targetPurchasePrice": 0.0,
+      "lastTradedPrice": 286.15,
+      "changePercentage": -3.82,
+      "change": -11.35
+    },
+    {
+      "key": "11648758",
+      "sector": "Pharma",
+      "isActive": true,
+      "stockName": "Pfizer Limited",
+      "stockSymbol": "NSE:PFIZER",
+      "lowestPurchasePrice": 0.0,
+      "highestPurchasePrice": 0.0,
+      "targetPurchasePrice": 0.0,
+      "lastTradedPrice": 1793.25,
+      "changePercentage": -0.36,
+      "change": -6.5
+    },
+    {
+      "key": "677258",
+      "sector": "Pharma",
+      "isActive": true,
+      "stockName": "Sun Pharmaceutical Industries Limited",
+      "stockSymbol": "NSE:SUNPHARMA",
+      "lowestPurchasePrice": 0.0,
+      "highestPurchasePrice": 0.0,
+      "targetPurchasePrice": 0.0,
+      "lastTradedPrice": 699.75,
+      "changePercentage": 5.04,
+      "change": 33.55
+    },
+    {
+      "key": "3261730",
+      "sector": "Banking",
+      "isActive": true,
+      "stockName": "Axis Bank Ltd",
+      "stockSymbol": "NSE:AXISBANK",
+      "lowestPurchasePrice": 0.0,
+      "highestPurchasePrice": 0.0,
+      "targetPurchasePrice": 0.0,
+      "lastTradedPrice": 500.7,
+      "changePercentage": -1.23,
+      "change": -6.25
     }
   ]
 }

@@ -79,6 +79,38 @@ public class StockManager {
 		return json;
 	}
 	
+	public void setChangeFieldsColor(TextField tf, String newStrValue) {
+		String color = "#008000";
+		float newValue;
+		newValue = Float.parseFloat(newStrValue);
+		if(newValue < 0)
+			color = "#FF0000";
+			
+		tf.setStyle("-fx-control-inner-background: " + color);		
+	}
+	
+	public void setLastTradedPriceColor(TextField tf, String newStrValue) {
+		String color = "#008000";
+		float tfValue, newValue;
+		tfValue = Float.parseFloat(tf.getText());
+		newValue = Float.parseFloat(newStrValue);
+		if(newValue < tfValue)
+			color = "#FF0000";
+		
+		tf.setStyle("-fx-control-inner-background: " + color);		
+	}
+	
+	public void setTargetPurchasePriceColor(TextField tf, String newStrValue) {
+		String color = "#008000";
+		float tfValue, newValue;
+		tfValue = Float.parseFloat(tf.getText());
+		newValue = Float.parseFloat(newStrValue);
+		if(newValue > tfValue)
+			color = "#FF0000";
+		
+		tf.setStyle("-fx-control-inner-background: " + color);		
+	}
+	
 	public void refreshAllFromGoogle(List<HashMap<String, Object>> listOfFormFields) {
 		for(int i = 0; i < listOfFormFields.size(); i++) {
 			String key = stockData.getStocks().get(i).getKey();
@@ -89,15 +121,19 @@ public class StockManager {
 			TextField tfLastTradedPrice = (TextField) listOfFormFields.get(i).get(key + "tfLastTradedPrice");
 			TextField tfChange = (TextField) listOfFormFields.get(i).get(key + "tfChange");
 			TextField tfChangePercentage = (TextField) listOfFormFields.get(i).get(key + "tfChangePercentage");
+			TextField tfTargetPurchasePrice = (TextField) listOfFormFields.get(i).get(key + "tfTargetPurchasePrice");
 			
 			GoogleStockData gsd =  (GoogleStockData) googleStockData.get(0);
-			tfLastTradedPrice.setStyle("-fx-control-inner-background: #008000");
+			
+			setTargetPurchasePriceColor(tfTargetPurchasePrice, gsd.getLastTradedPrice());
+			
+			setLastTradedPriceColor(tfLastTradedPrice, gsd.getLastTradedPrice());
 			tfLastTradedPrice.setText(gsd.getLastTradedPrice());
 			
-			tfChange.setStyle("-fx-control-inner-background: #008000");
+			setChangeFieldsColor(tfChange, gsd.getChange());	
 			tfChange.setText(gsd.getChange());
 			
-			tfChangePercentage.setStyle("-fx-control-inner-background: #008000");
+			setChangeFieldsColor(tfChangePercentage, gsd.getChangePercentage());
 			tfChangePercentage.setText(gsd.getChangePercentage());
 		}
 		
@@ -133,12 +169,16 @@ public class StockManager {
 			connection.disconnect();
 			
 		}catch (MalformedURLException mfe) {
-			mfe.printStackTrace();
-//			System.out.println("Stock " + stockSymbol + " not found.");
+//			mfe.printStackTrace();
+			System.out.println("Stock " + stockSymbol + " not found.");
 		}
 		catch (IOException e) {
-			e.printStackTrace();
+			System.out.println(e.getMessage());
+//			e.printStackTrace();
 //			System.out.println("Stock " + stockSymbol + " not found.");
+		}
+		catch (RuntimeException rte) {
+			System.out.println(rte.getMessage());
 		}
 		
 		List googleStockData = googleStockAPIResponseToStockResponse(stockResponse);

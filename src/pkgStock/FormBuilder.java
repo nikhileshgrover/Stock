@@ -68,7 +68,7 @@ public class FormBuilder extends Application {
 		try {
 //			Load the property file
 			propertyConfigs = property.getPropValues();
-
+			
 //			Load data from stockData.json
 			DataFileManager dm = new DataFileManager();
 			dm.initializeDataFile(propertyConfigs);
@@ -142,7 +142,8 @@ public class FormBuilder extends Application {
 	    
 //	    System.out.println(getClass().getResourceAsStream("/SaveIcon.png"));
 
-	    Button btnAddStock = new Button("Add");
+	    Button btnAddStock = new Button("_Add");
+	    btnAddStock.setMnemonicParsing(true);
 	    btnAddStock.setPrefSize(150, 20);
 	    btnAddStock.setOnAction(new EventHandler<ActionEvent>() {
 	    	@Override public void handle(ActionEvent e) {
@@ -171,7 +172,8 @@ public class FormBuilder extends Application {
 	    imageView.setFitWidth(30.0);
 	    btnRemoveStock.setGraphic(imageView);
 	   
-	    Button btnRefreshStock = new Button("Refresh");
+	    Button btnRefreshStock = new Button("_Refresh");
+	    btnRefreshStock.setMnemonicParsing(true);
 	    btnRefreshStock.setPrefSize(150, 20);
 	    btnRefreshStock.setOnAction(new EventHandler<ActionEvent>() {
 	    	@Override public void handle(ActionEvent e) {
@@ -190,7 +192,28 @@ public class FormBuilder extends Application {
 	    imageView.setFitWidth(30.0);
 	    btnRefreshStock.setGraphic(imageView);
 	    
-	    hbox.getChildren().addAll(btnSave, btnAddStock, btnRefreshStock, lbOutput);
+	    Label lbStream = new Label("Stream");
+	    CheckBox cbStream = new CheckBox();
+	    
+	    
+	    
+	    ChangeListener runStockStream = new ChangeListener<Boolean>() {
+	        @Override
+	        public void changed(ObservableValue<? extends Boolean> ov,
+	            Boolean old_val, Boolean new_val) {
+	            if (new_val){
+	            	lbOutput.setText("Streaming...");
+//	            	while(1==1)
+	            		stockManager.refreshAllFromGoogle(listOfFormFields);
+	            		System.out.println(stockManager.saveFormData(listOfFormFields));
+	            }
+	            else
+	            	lbOutput.setText("");
+	        }};
+	        
+	        cbStream.selectedProperty().addListener(runStockStream);
+	    
+	    hbox.getChildren().addAll(btnSave, btnAddStock, btnRefreshStock, lbStream, cbStream, lbOutput);
 //	    System.out.println(stockData.getStocks().get(0).getSector());
 	    return hbox;
 	}
@@ -435,20 +458,36 @@ public class FormBuilder extends Application {
 			stock.setStockSymbol(hmResult.get("stockSymbol"));
 			stock.setSector(hmResult.get("stockSector"));
 			
-			stockData.getStocks().add(stock);
-			addRowToGridPane(stockData.getStocks().size()-1);
-			stockManager.refreshAllFromGoogle(listOfFormFields);
-			
-			try {
-				DataFileManager dm = new DataFileManager();
-				dm.initializeDataFile(propertyConfigs);
+//			this is the segment where i need to add an if condition to check if hmResult.get("stockSymbol") exists in the stockData.getStocks() list. 
+//			If it does not exist, then add, else message "Stock already exists"
+			if(checkForDuplicateStock(hmResult.get("stockSymbol"))) {
+				stockData.getStocks().add(stock);
+				addRowToGridPane(stockData.getStocks().size()-1);
+				stockManager.refreshAllFromGoogle(listOfFormFields);
 				
-				String json = dm.prepareFileData(stockData);
-				
-				dm.saveFileData(json, propertyConfigs);
-				
-				}catch (IOException io){
+				try {
+					DataFileManager dm = new DataFileManager();
+					dm.initializeDataFile(propertyConfigs);
+					
+					String json = dm.prepareFileData(stockData);
+					
+					dm.saveFileData(json, propertyConfigs);
+					
+					}catch (IOException io){
+				}
+			}
+			else {
+//				display duplicate stock message
 			}
 		}
+	}
+	
+	public boolean checkForDuplicateStock(String stockSymbol) {
+		for(int i=0; i < stockData.getStocks().size();i++) {
+			if(stockData.getStocks().get(i).getStockSymbol().equals(stockSymbol)) {
+				return false;
+			}
+		}
+		return true;
 	}
 }
