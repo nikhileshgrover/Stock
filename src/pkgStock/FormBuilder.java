@@ -63,6 +63,7 @@ public class FormBuilder extends Application {
 	private GridPane gridPane = new GridPane();
 	private Matches listOfMatches;
 	private Utility logger;
+	private Label lbOutput;
 	
 	@Override
 	public void start(Stage stage) throws Exception {
@@ -79,9 +80,9 @@ public class FormBuilder extends Application {
 			dm.initializeDataFile(propertyConfigs);
 			stockData = dm.getFileData(propertyConfigs);
 			stockManager = new StockManager(stockData, propertyConfigs);
-		}catch (IOException io) 
+		}catch (IOException exception) 
 		{
-			//create common logging library	
+			logger.log(Level.SEVERE, exception.getMessage());
 		}
 		
 		stage.setTitle("Stock Manager");
@@ -115,6 +116,10 @@ public class FormBuilder extends Application {
         launch(args);
     }
 	
+	private void setOutputLabel(String label) {
+		lbOutput.setText(label);
+	}
+	
 	private HBox addHBox() {
 	    HBox hbox = new HBox();
 	    hbox.setPadding(new Insets(15, 12, 15, 12));
@@ -122,10 +127,11 @@ public class FormBuilder extends Application {
 	    hbox.setStyle("-fx-background-color: #336699;");
 	    Image btnImage;
 	    ImageView imageView;
-	    Label lbOutput = new Label();
+	    lbOutput = new Label();
 	    lbOutput.setTextFill(Color.web("#FF0000"));
 
 	    Button btnSave = new Button("_Save");
+	    btnSave.setStyle(propertyConfigs.get("btnStyle"));
 	    btnSave.setMnemonicParsing(true);
 	    
 	    btnSave.setPrefSize(150, 20);
@@ -135,7 +141,7 @@ public class FormBuilder extends Application {
 	    		Date date = new Date();
 
 	    		logger.log(Level.INFO, stockManager.saveFormData(listOfFormFields));
-	    		lbOutput.setText("Saved: " + dateFormat.format(date)); 		
+	    		setOutputLabel("Saved: " + dateFormat.format(date));
 	        }
 	    	
 	    });
@@ -145,15 +151,14 @@ public class FormBuilder extends Application {
 	    imageView.setFitWidth(30.0);
 	    btnSave.setGraphic(imageView);
 	    
-//	    System.out.println(getClass().getResourceAsStream("/SaveIcon.png"));
-
 	    Button btnAddStock = new Button("_Add");
+	    btnAddStock.setStyle(propertyConfigs.get("btnStyle"));
 	    btnAddStock.setMnemonicParsing(true);
 	    btnAddStock.setPrefSize(150, 20);
 	    btnAddStock.setOnAction(new EventHandler<ActionEvent>() {
 	    	@Override public void handle(ActionEvent e) {
 	    		addStockFormField();
-	    		lbOutput.setText("Form Field Added");
+	    		setOutputLabel("Form Field Added.");
 	        }
 	    	
 	    });
@@ -164,11 +169,13 @@ public class FormBuilder extends Application {
 	    btnAddStock.setGraphic(imageView);
 	 
 	    Button btnRemoveStock = new Button("Remove");
+	    btnRemoveStock.setStyle(propertyConfigs.get("btnStyle"));
 	    btnRemoveStock.setPrefSize(150, 20);
 	    btnRemoveStock.setOnAction(new EventHandler<ActionEvent>() {
 	    	@Override public void handle(ActionEvent e) {
 	    		stockManager.getStockMatch("Microsoft");
-	    		lbOutput.setText("Getting Match");
+	    		setOutputLabel("Getting Match.");
+	    		
 	        }
 	    });
 	    btnImage = new Image(getClass().getClassLoader().getResourceAsStream("images/MinusIcon.png"));
@@ -178,6 +185,7 @@ public class FormBuilder extends Application {
 	    btnRemoveStock.setGraphic(imageView);
 	   
 	    Button btnRefreshStock = new Button("_Refresh");
+	    btnRefreshStock.setStyle(propertyConfigs.get("btnStyle"));
 	    btnRefreshStock.setMnemonicParsing(true);
 	    btnRefreshStock.setPrefSize(150, 20);
 	    btnRefreshStock.setOnAction(new EventHandler<ActionEvent>() {
@@ -187,7 +195,7 @@ public class FormBuilder extends Application {
 
 	    		stockManager.refreshAllFromGoogle(listOfFormFields);
 	    		logger.log(Level.INFO, stockManager.saveFormData(listOfFormFields));
-	    		lbOutput.setText("Refreshed: " + dateFormat.format(date));
+	    		setOutputLabel("Refreshed: " + dateFormat.format(date));
 	        }
 	    	
 	    });
@@ -197,31 +205,32 @@ public class FormBuilder extends Application {
 	    imageView.setFitWidth(30.0);
 	    btnRefreshStock.setGraphic(imageView);
 	    
-	    Label lbStream = new Label("Stream");
-	    CheckBox cbStream = new CheckBox();
-	    
-	    
-	    
-	    ChangeListener runStockStream = new ChangeListener<Boolean>() {
-	        @Override
-	        public void changed(ObservableValue<? extends Boolean> ov,
-	            Boolean old_val, Boolean new_val) {
-	            if (new_val){
-	            	lbOutput.setText("Streaming...");
-//	            	while(1==1)
-	            		stockManager.refreshAllFromGoogle(listOfFormFields);
-	            		logger.log(Level.INFO, stockManager.saveFormData(listOfFormFields));
+	    CheckBox cbStream = new CheckBox("Stream");
+	    cbStream.setStyle(propertyConfigs.get("checkBoxStyle"));
+	    cbStream.selectedProperty().addListener(new ChangeListener<Boolean>() {
+	        public void changed(ObservableValue<? extends Boolean> ov, Boolean old_val, Boolean new_val) {
+	        	if (new_val) {
+	            	setOutputLabel("Streaming...");
+	            	btnSave.setDisable(true);
+	            	btnAddStock.setDisable(true);
+	            	btnRefreshStock.setDisable(true);
+	            	btnRemoveStock.setDisable(true);
+	        	}
+	            else {
+	            	setOutputLabel("Streaming stopped.");
+	            	btnSave.setDisable(false);
+	            	btnAddStock.setDisable(false);
+	            	btnRefreshStock.setDisable(false);
+	            	btnRemoveStock.setDisable(false);
 	            }
-	            else
-	            	lbOutput.setText("");
-	        }};
-	        
-	        cbStream.selectedProperty().addListener(runStockStream);
+	        }
+	    });
 	    
-	    hbox.getChildren().addAll(btnSave, btnAddStock, btnRefreshStock, lbStream, cbStream, lbOutput);
-//	    System.out.println(stockData.getStocks().get(0).getSector());
+	    hbox.getChildren().addAll(btnSave, btnAddStock, btnRefreshStock, cbStream, lbOutput);
 	    return hbox;
 	}
+	
+	
 	
 	private HashMap<String, Object> createGridRow(int v) {
 		HashMap<String, Object> formFields = new HashMap<>();
@@ -362,8 +371,6 @@ public class FormBuilder extends Application {
 	        @Override
 	        public void handle(KeyEvent ke)
 	        {
-//	        	System.out.println(ke.getCode().isLetterKey() + " | " + ke.getCode().isDigitKey());
-//	        	if(false){
 	        	if(ke.getCode().isLetterKey() || ke.getCode().isDigitKey() || ke.getCode().equals(KeyCode.BACK_SPACE) || ke.getCode().equals(KeyCode.DELETE)) {
 	        		listOfMatches = stockManager.getStockMatch(cbStockSymbol.getEditor().getText());
 	        		listOfMatches = cleanListOfMatches();
@@ -371,12 +378,6 @@ public class FormBuilder extends Application {
 	        		cbStockSymbol.getItems().remove(0, cbStockSymbol.getItems().size());
 		        		
 	        		for(int i=0; i < listOfMatches.getMatches().size(); i++){
-//        				cbStockSymbol.getItems().add(
-//        						i
-//        						+ " | " + listOfMatches.getMatches().get(i).getId()
-//        						+ " | " + listOfMatches.getMatches().get(i).getExchange()
-//        						+ ":" + listOfMatches.getMatches().get(i).getTicker()
-//        						);
 	        			cbStockSymbol.getItems().add(
         						listOfMatches.getMatches().get(i).getExchange()
         						+ ":" + listOfMatches.getMatches().get(i).getTicker()
@@ -444,7 +445,6 @@ public class FormBuilder extends Application {
 		        	stockMap.put("stockSector", tfStockSector.getText());
 
 		            return stockMap;
-//		        	return new Result(tfKey.getText(), tfStockName.getText(), tfStockSymbol.getText());
 		        }
 
 		        return null;

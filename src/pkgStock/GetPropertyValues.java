@@ -36,6 +36,10 @@ public class GetPropertyValues {
 			String stockContextURL = prop.getProperty("stockContextURL");
 			String stockMatchBaseURL = prop.getProperty("stockMatchBaseURL");
 			String stockMatchContextURL = prop.getProperty("stockMatchContextURL");
+			String btnStyle = prop.getProperty("btnStyle");
+			String checkBoxStyle = prop.getProperty("checkBoxStyle");
+			
+			
 			
 			hm.put("dataFileBasePath", dataFileBasePath);
 			hm.put("dataFileName", dataFileName);
@@ -45,6 +49,9 @@ public class GetPropertyValues {
 			hm.put("stockContextURL", stockContextURL);
 			hm.put("stockMatchBaseURL", stockMatchBaseURL);
 			hm.put("stockMatchContextURL", stockMatchContextURL);
+			hm.put("btnStyle", btnStyle);
+			hm.put("checkBoxStyle", checkBoxStyle);
+			
 			
 		} catch (Exception exception) {
 			logger.log(Level.SEVERE, exception.getMessage());

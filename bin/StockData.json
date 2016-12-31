@@ -49,8 +49,8 @@
       "highestPurchasePrice": 3537.74,
       "targetPurchasePrice": 350.0,
       "lastTradedPrice": 377.32,
-      "changePercentage": 0.22,
-      "change": 0.81
+      "changePercentage": 0.19,
+      "change": 0.71
     },
     {
       "key": "expedia",
@@ -112,7 +112,7 @@
       "stockSymbol": "NYSE:SUN",
       "lowestPurchasePrice": 0.0,
       "highestPurchasePrice": 0.0,
-      "targetPurchasePrice": 20.0,
+      "targetPurchasePrice": 21.0,
       "lastTradedPrice": 26.89,
       "changePercentage": 0.71,
       "change": 0.19
