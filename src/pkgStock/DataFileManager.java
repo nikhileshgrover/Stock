@@ -7,6 +7,7 @@ import java.io.OutputStreamWriter;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.util.HashMap;
+import java.util.logging.Level;
 import java.nio.file.Paths;
 import java.nio.file.Files;
 import java.nio.charset.*;
@@ -15,6 +16,7 @@ import com.google.gson.*;
 public class DataFileManager {
 
 	File f;
+	Utility logger = new Utility();
 	
 	public void initializeDataFile(HashMap<String, String> propertyConfigs) throws IOException {
 		DataFileManager dfm = new DataFileManager();
@@ -24,7 +26,7 @@ public class DataFileManager {
 		if(!dfm.doesDataFileExists(f))
 			dfm.createDataFile(propertyConfigs);
 		else
-			System.out.println("File exists");		
+			logger.log(Level.INFO, "File exists");
 	}
 	
 	public Stocks getFileData(HashMap<String, String> propertyConfigs) throws IOException {

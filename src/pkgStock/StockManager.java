@@ -1,5 +1,6 @@
 package pkgStock;
 
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -11,6 +12,8 @@ import java.net.URLEncoder;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -22,11 +25,12 @@ import javafx.scene.control.TextField;
 public class StockManager {
 	private Stocks stockData;
 	private HashMap<String, String> propertyConfigs;
-	
+	private Utility logger;
 //	Constructor
 	public StockManager(Stocks stockData, HashMap<String, String> propertyConfigs) {
 		this.stockData = stockData;
 		this.propertyConfigs = propertyConfigs;
+		this.logger = new Utility();
 	}
 	
 	public String saveFormData(List<HashMap<String, Object>> listOfFormFields) {
@@ -145,7 +149,8 @@ public class StockManager {
 		try{
 //			String uri = "http://finance.google.com/finance/info?client=ig&q=NASDAQ%3aAMZN";
 			String uri = propertyConfigs.get("stockBaseURL").toString() + propertyConfigs.get("stockContextURL").toString() + URLEncoder.encode(stockSymbol, "UTF-8");
-			System.out.println(uri);
+			logger.log(Level.INFO, uri);
+
 			URL url = new URL(uri);
 			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 			
@@ -170,15 +175,13 @@ public class StockManager {
 			
 		}catch (MalformedURLException mfe) {
 //			mfe.printStackTrace();
-			System.out.println("Stock " + stockSymbol + " not found.");
+			logger.log(Level.SEVERE, "Stock " + stockSymbol + " not found.");
+//			LOGGER.severe("Stock " + stockSymbol + " not found.");
 		}
-		catch (IOException e) {
-			System.out.println(e.getMessage());
+		catch (RuntimeException | IOException exception) {
+//			LOGGER.severe(exception.getMessage());
+			logger.log(Level.SEVERE, exception.getMessage());
 //			e.printStackTrace();
-//			System.out.println("Stock " + stockSymbol + " not found.");
-		}
-		catch (RuntimeException rte) {
-			System.out.println(rte.getMessage());
 		}
 		
 		List googleStockData = googleStockAPIResponseToStockResponse(stockResponse);
@@ -201,8 +204,8 @@ public class StockManager {
 		Matches matches = null;
 		try {
 			String uri = propertyConfigs.get("stockMatchBaseURL").toString() + propertyConfigs.get("stockMatchContextURL").toString() + URLEncoder.encode(inputString, "UTF-8");
-			System.out.println(uri);
-			
+//			LOGGER.info(uri);
+			logger.log(Level.INFO, uri);
 			URL url = new URL(uri);
 			HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 			
@@ -228,16 +231,17 @@ public class StockManager {
 					
 			connection.disconnect();
 			
-		}catch (MalformedURLException mfe) {
-			mfe.printStackTrace();
+		} catch (IOException exception) {
+//			exception.printStackTrace();
 //			System.out.println("Stock " + stockSymbol + " not found.");
-		}
-		catch (IOException e) {
-			e.printStackTrace();
-//			System.out.println("Stock " + stockSymbol + " not found.");
+//			LOGGER.info("Stock " + stockSymbol + " not found.");
+//			LOGGER.severe(exception.getMessage());
+			logger.log(Level.SEVERE, exception.getMessage());
 		}
 		
-		System.out.println(stockMatchResponse);
+//		System.out.println(stockMatchResponse);
+//		LOGGER.info(stockMatchResponse);
+		logger.log(Level.INFO, stockMatchResponse);
 		return matches;
 		
 	}

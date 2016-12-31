@@ -9,9 +9,9 @@
       "lowestPurchasePrice": 1000.1,
       "highestPurchasePrice": 3537.74,
       "targetPurchasePrice": 450.0,
-      "lastTradedPrice": 772.13,
-      "changePercentage": 0.09,
-      "change": 0.73
+      "lastTradedPrice": 749.87,
+      "changePercentage": -2.0,
+      "change": -15.28
     },
     {
       "key": "microsoft",
@@ -22,9 +22,9 @@
       "lowestPurchasePrice": 2000.2,
       "highestPurchasePrice": 3537.74,
       "targetPurchasePrice": 50.0,
-      "lastTradedPrice": 62.99,
-      "changePercentage": -0.46,
-      "change": -0.29
+      "lastTradedPrice": 62.14,
+      "changePercentage": -1.21,
+      "change": -0.76
     },
     {
       "key": "facebook",
@@ -34,10 +34,10 @@
       "stockSymbol": "NASDAQ:FB",
       "lowestPurchasePrice": 2100.2,
       "highestPurchasePrice": 3232.74,
-      "targetPurchasePrice": 1463.53,
-      "lastTradedPrice": 116.92,
-      "changePercentage": -0.92,
-      "change": -1.09
+      "targetPurchasePrice": 105.0,
+      "lastTradedPrice": 115.05,
+      "changePercentage": -1.12,
+      "change": -1.3
     },
     {
       "key": "chipotle",
@@ -47,10 +47,10 @@
       "stockSymbol": "NASDAQ:CMG",
       "lowestPurchasePrice": 2000.2,
       "highestPurchasePrice": 3537.74,
-      "targetPurchasePrice": 1841.53,
-      "lastTradedPrice": 385.37,
-      "changePercentage": -0.87,
-      "change": -3.38
+      "targetPurchasePrice": 350.0,
+      "lastTradedPrice": 377.32,
+      "changePercentage": 0.22,
+      "change": 0.81
     },
     {
       "key": "expedia",
@@ -61,9 +61,9 @@
       "lowestPurchasePrice": 2000.2,
       "highestPurchasePrice": 3537.74,
       "targetPurchasePrice": 120.0,
-      "lastTradedPrice": 113.47,
-      "changePercentage": -0.14,
-      "change": -0.16
+      "lastTradedPrice": 113.28,
+      "changePercentage": -0.61,
+      "change": -0.69
     },
     {
       "key": "facebook",
@@ -74,9 +74,9 @@
       "lowestPurchasePrice": 0.0,
       "highestPurchasePrice": 0.0,
       "targetPurchasePrice": 100.0,
-      "lastTradedPrice": 116.92,
-      "changePercentage": -0.92,
-      "change": -1.09
+      "lastTradedPrice": 115.05,
+      "changePercentage": -1.12,
+      "change": -1.3
     },
     {
       "key": "675530",
@@ -87,9 +87,9 @@
       "lowestPurchasePrice": 0.0,
       "highestPurchasePrice": 0.0,
       "targetPurchasePrice": 850.0,
-      "lastTradedPrice": 999.0,
-      "changePercentage": 0.05,
-      "change": 0.5
+      "lastTradedPrice": 1011.0,
+      "changePercentage": 1.88,
+      "change": 18.65
     },
     {
       "key": "784961",
@@ -100,9 +100,9 @@
       "lowestPurchasePrice": 0.0,
       "highestPurchasePrice": 0.0,
       "targetPurchasePrice": 1800.0,
-      "lastTradedPrice": 2305.25,
-      "changePercentage": -0.35,
-      "change": -8.15
+      "lastTradedPrice": 2366.55,
+      "changePercentage": 0.63,
+      "change": 14.85
     },
     {
       "key": "757342559149718",
@@ -113,9 +113,9 @@
       "lowestPurchasePrice": 0.0,
       "highestPurchasePrice": 0.0,
       "targetPurchasePrice": 20.0,
-      "lastTradedPrice": 26.63,
-      "changePercentage": -2.2,
-      "change": -0.6
+      "lastTradedPrice": 26.89,
+      "changePercentage": 0.71,
+      "change": 0.19
     },
     {
       "key": "3853944",
@@ -126,9 +126,9 @@
       "lowestPurchasePrice": 0.0,
       "highestPurchasePrice": 0.0,
       "targetPurchasePrice": 200.0,
-      "lastTradedPrice": 277.64,
-      "changePercentage": 2.58,
-      "change": 6.99
+      "lastTradedPrice": 277.35,
+      "changePercentage": 0.67,
+      "change": 1.85
     },
     {
       "key": "829919",
@@ -139,9 +139,9 @@
       "lowestPurchasePrice": 0.0,
       "highestPurchasePrice": 0.0,
       "targetPurchasePrice": 220.0,
-      "lastTradedPrice": 273.5,
-      "changePercentage": -0.22,
-      "change": -0.6
+      "lastTradedPrice": 276.25,
+      "changePercentage": 0.67,
+      "change": 1.85
     },
     {
       "key": "11648758",
@@ -152,9 +152,9 @@
       "lowestPurchasePrice": 0.0,
       "highestPurchasePrice": 0.0,
       "targetPurchasePrice": 1900.0,
-      "lastTradedPrice": 1803.25,
-      "changePercentage": -0.33,
-      "change": -5.95
+      "lastTradedPrice": 1882.0,
+      "changePercentage": 4.65,
+      "change": 83.6
     },
     {
       "key": "677258",
@@ -165,9 +165,9 @@
       "lowestPurchasePrice": 0.0,
       "highestPurchasePrice": 0.0,
       "targetPurchasePrice": 650.0,
-      "lastTradedPrice": 621.4,
-      "changePercentage": 0.01,
-      "change": 0.05
+      "lastTradedPrice": 628.8,
+      "changePercentage": 2.29,
+      "change": 14.1
     },
     {
       "key": "3261730",
@@ -178,22 +178,9 @@
       "lowestPurchasePrice": 0.0,
       "highestPurchasePrice": 0.0,
       "targetPurchasePrice": 500.0,
-      "lastTradedPrice": 438.7,
-      "changePercentage": -0.31,
-      "change": -1.35
-    },
-    {
-      "key": "710954",
-      "sector": "",
-      "isActive": true,
-      "stockName": "Sourcefire LLC",
-      "stockSymbol": "NASDAQ:FIRE",
-      "lowestPurchasePrice": 0.0,
-      "highestPurchasePrice": 0.0,
-      "targetPurchasePrice": 100.0,
-      "lastTradedPrice": 0.0,
-      "changePercentage": 0.0,
-      "change": 0.0
+      "lastTradedPrice": 450.3,
+      "changePercentage": 1.36,
+      "change": 6.05
     }
   ]
 }

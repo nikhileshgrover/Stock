@@ -27,6 +27,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
+import java.util.logging.Level;
 import java.util.ArrayList;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -61,6 +62,7 @@ public class FormBuilder extends Application {
 	private StockManager stockManager;
 	private GridPane gridPane = new GridPane();
 	private Matches listOfMatches;
+	private Utility logger;
 	
 	@Override
 	public void start(Stage stage) throws Exception {
@@ -68,6 +70,9 @@ public class FormBuilder extends Application {
 		try {
 //			Load the property file
 			propertyConfigs = property.getPropValues();
+			
+//			Initialize the logger
+			this.logger = new Utility();
 			
 //			Load data from stockData.json
 			DataFileManager dm = new DataFileManager();
@@ -81,7 +86,7 @@ public class FormBuilder extends Application {
 		
 		stage.setTitle("Stock Manager");
 		Group root = new Group();
-		Scene scene = new Scene(root, 1024, 800, Color.WHITE);
+		Scene scene = new Scene(root, 1440, 900, Color.WHITE);
 		TabPane tabPane = new TabPane();
 		BorderPane borderPane = new BorderPane();
 		BorderPane stockTabBorderPane = new BorderPane();
@@ -129,7 +134,7 @@ public class FormBuilder extends Application {
 	    		DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd HH:mm:ss");
 	    		Date date = new Date();
 
-	    		System.out.println(stockManager.saveFormData(listOfFormFields));
+	    		logger.log(Level.INFO, stockManager.saveFormData(listOfFormFields));
 	    		lbOutput.setText("Saved: " + dateFormat.format(date)); 		
 	        }
 	    	
@@ -181,7 +186,7 @@ public class FormBuilder extends Application {
 	    		Date date = new Date();
 
 	    		stockManager.refreshAllFromGoogle(listOfFormFields);
-	    		System.out.println(stockManager.saveFormData(listOfFormFields));
+	    		logger.log(Level.INFO, stockManager.saveFormData(listOfFormFields));
 	    		lbOutput.setText("Refreshed: " + dateFormat.format(date));
 	        }
 	    	
@@ -205,7 +210,7 @@ public class FormBuilder extends Application {
 	            	lbOutput.setText("Streaming...");
 //	            	while(1==1)
 	            		stockManager.refreshAllFromGoogle(listOfFormFields);
-	            		System.out.println(stockManager.saveFormData(listOfFormFields));
+	            		logger.log(Level.INFO, stockManager.saveFormData(listOfFormFields));
 	            }
 	            else
 	            	lbOutput.setText("");

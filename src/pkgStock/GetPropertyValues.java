@@ -5,11 +5,13 @@ import java.io.IOException;
 import java.io.InputStream;
 
 import java.util.Properties;
+import java.util.logging.Level;
 import java.util.HashMap;
 
 public class GetPropertyValues {
 	String result = "";
 	InputStream inputStream;
+	Utility logger = new Utility();
 	
 	public HashMap<String, String> getPropValues() throws IOException {
 		HashMap<String, String> hm = new HashMap<>();
@@ -44,8 +46,8 @@ public class GetPropertyValues {
 			hm.put("stockMatchBaseURL", stockMatchBaseURL);
 			hm.put("stockMatchContextURL", stockMatchContextURL);
 			
-		} catch (Exception e) {
-			System.out.println("Exception: " + e);
+		} catch (Exception exception) {
+			logger.log(Level.SEVERE, exception.getMessage());
 		} finally {
 			inputStream.close();
 		}
