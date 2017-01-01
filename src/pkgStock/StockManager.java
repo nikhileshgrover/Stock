@@ -115,6 +115,8 @@ public class StockManager {
 		tf.setStyle("-fx-control-inner-background: " + color);		
 	}
 	
+	
+	
 	public void refreshAllFromGoogle(List<HashMap<String, Object>> listOfFormFields) {
 		for(int i = 0; i < listOfFormFields.size(); i++) {
 			String key = stockData.getStocks().get(i).getKey();
@@ -232,15 +234,9 @@ public class StockManager {
 			connection.disconnect();
 			
 		} catch (IOException exception) {
-//			exception.printStackTrace();
-//			System.out.println("Stock " + stockSymbol + " not found.");
-//			LOGGER.info("Stock " + stockSymbol + " not found.");
-//			LOGGER.severe(exception.getMessage());
 			logger.log(Level.SEVERE, exception.getMessage());
 		}
 		
-//		System.out.println(stockMatchResponse);
-//		LOGGER.info(stockMatchResponse);
 		logger.log(Level.INFO, stockMatchResponse);
 		return matches;
 		
